@@ -1,10 +1,10 @@
 {
-  "name": "@copilotkit/react-textarea",
+  "name": "@pixillab/react-textarea",
   "private": false,
-  "homepage": "https://github.com/CopilotKit/CopilotKit",
+  "homepage": "https://github.com/pixillab/CopilotKit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CopilotKit/CopilotKit.git"
+    "url": "https://github.com/pixillab/CopilotKit.git"
   },
   "publishConfig": {
     "access": "public"
