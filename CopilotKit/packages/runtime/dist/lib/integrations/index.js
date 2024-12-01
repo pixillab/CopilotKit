@@ -34,7 +34,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var require_package = __commonJS({
   "package.json"(exports, module2) {
     module2.exports = {
-      name: "@pixillab/runtime",
+      name: "@copilotkit/runtime",
       private: false,
       homepage: "https://github.com/pixillab/CopilotKit",
       repository: {
@@ -44,7 +44,7 @@ var require_package = __commonJS({
       publishConfig: {
         access: "public"
       },
-      version: "1.3.15-pixil.1",
+      version: "1.3.15-pixil.2",
       sideEffects: false,
       main: "./dist/index.js",
       module: "./dist/index.mjs",

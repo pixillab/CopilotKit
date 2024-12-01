@@ -234,7 +234,7 @@ var TelemetryClient = class {
 };
 
 // package.json
-var version = "1.3.15-pixil.1";
+var version = "1.3.15-pixil.2";
 
 // src/index.ts
 var COPILOTKIT_VERSION = version;

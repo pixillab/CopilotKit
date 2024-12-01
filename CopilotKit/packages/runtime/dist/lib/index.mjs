@@ -1,7 +1,7 @@
 import {
   CopilotRuntime,
   flattenToolCallsNoDuplicates
-} from "../chunk-CCPHHGJX.mjs";
+} from "../chunk-6S64BG5Y.mjs";
 import {
   GoogleGenerativeAIAdapter,
   GroqAdapter,
@@ -14,22 +14,22 @@ import {
   config,
   copilotRuntimeNextJSAppRouterEndpoint,
   copilotRuntimeNextJSPagesRouterEndpoint
-} from "../chunk-3ICFT2YR.mjs";
-import {
-  copilotRuntimeNodeExpressEndpoint
-} from "../chunk-R2IXQ4NB.mjs";
+} from "../chunk-RVRX6WCR.mjs";
 import {
   copilotRuntimeNestEndpoint
-} from "../chunk-KZWA2JYR.mjs";
+} from "../chunk-VJ53MRWO.mjs";
+import {
+  copilotRuntimeNodeExpressEndpoint
+} from "../chunk-S5CTNYZW.mjs";
 import {
   buildSchema,
   copilotRuntimeNodeHttpEndpoint,
   createContext,
   getCommonConfig
-} from "../chunk-XQI7Z632.mjs";
-import "../chunk-7E3RD6ZC.mjs";
+} from "../chunk-A2DGPSHT.mjs";
 import "../chunk-MXXPWWBF.mjs";
 import "../chunk-U3V2BCGI.mjs";
+import "../chunk-7E3RD6ZC.mjs";
 import "../chunk-D2WLFQS6.mjs";
 import "../chunk-44O2JGUY.mjs";
 export {

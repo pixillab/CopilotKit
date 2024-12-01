@@ -1,13 +1,7 @@
 import "./chunk-DE5K76I2.mjs";
+import "./chunk-NAFEBKSO.mjs";
 import "./chunk-MSUB6DGR.mjs";
 import "./chunk-IAFBVORQ.mjs";
-import "./chunk-CYDWEPFL.mjs";
-import {
-  actionParametersToJsonSchema
-} from "./chunk-CIPF7PMC.mjs";
-import {
-  randomId
-} from "./chunk-RIPX6APP.mjs";
 import {
   COPILOT_CLOUD_API_URL,
   COPILOT_CLOUD_CHAT_URL,
@@ -19,10 +13,16 @@ import {
   TelemetryClient
 } from "./chunk-QFITLWYZ.mjs";
 import "./chunk-6QGXWNS5.mjs";
-import "./chunk-NAFEBKSO.mjs";
+import "./chunk-CYDWEPFL.mjs";
+import {
+  actionParametersToJsonSchema
+} from "./chunk-CIPF7PMC.mjs";
+import {
+  randomId
+} from "./chunk-RIPX6APP.mjs";
 
 // package.json
-var version = "1.3.15-pixil.1";
+var version = "1.3.15-pixil.2";
 
 // src/index.ts
 var COPILOTKIT_VERSION = version;
