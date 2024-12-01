@@ -31,7 +31,8 @@
     "graphql-codegen": "graphql-codegen",
     "graphql-codegen:watch": "graphql-codegen --watch",
     "link:global": "pnpm link --global",
-    "unlink:global": "pnpm unlink --global"
+    "unlink:global": "pnpm unlink --global",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "^18 || ^19 || ^19.0.0-rc"

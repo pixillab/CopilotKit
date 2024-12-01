@@ -24,6 +24,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup --clean",
+    "prepare": "npm run build",
     "dev": "tsup --watch",
     "test": "jest",
     "check-types": "tsc --noEmit",
