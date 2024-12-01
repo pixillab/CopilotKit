@@ -61,7 +61,8 @@ var require_package = __commonJS({
         clean: "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next && rm -rf __snapshots__",
         "generate-graphql-schema": "rm -rf __snapshots__ && ts-node ./scripts/generate-gql-schema.ts",
         "link:global": "pnpm link --global",
-        "unlink:global": "pnpm unlink --global"
+        "unlink:global": "pnpm unlink --global",
+        prepare: "npm run build"
       },
       devDependencies: {
         "@swc/core": "1.5.28",
