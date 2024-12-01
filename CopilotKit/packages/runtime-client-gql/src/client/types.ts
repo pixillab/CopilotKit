@@ -5,12 +5,13 @@ import {
   MessageStatus,
   ResultMessageInput,
   TextMessageInput,
+  ContentMessageInput,
   BaseMessageOutput,
   AgentStateMessageInput,
   MessageStatusCode,
 } from "../graphql/@generated/graphql";
 
-type MessageType = "TextMessage" | "ActionExecutionMessage" | "ResultMessage" | "AgentStateMessage";
+type MessageType = "TextMessage" | "ContentMessage" | "ActionExecutionMessage" | "ResultMessage" | "AgentStateMessage";
 
 export class Message {
   type: MessageType;
@@ -27,6 +28,10 @@ export class Message {
 
   isTextMessage(): this is TextMessage {
     return this.type === "TextMessage";
+  }
+  
+  isContentMessage(): this is ContentMessage {
+    return this.type === "ContentMessage";
   }
 
   isActionExecutionMessage(): this is ActionExecutionMessage {
@@ -49,6 +54,7 @@ export const Role = MessageRole;
 type MessageConstructorOptions = Partial<Message>;
 
 type TextMessageConstructorOptions = MessageConstructorOptions & TextMessageInput;
+type ContentMessageConstructorOptions = MessageConstructorOptions & ContentMessageInput;
 
 export class TextMessage extends Message implements TextMessageConstructorOptions {
   role: TextMessageInput["role"];
@@ -57,6 +63,18 @@ export class TextMessage extends Message implements TextMessageConstructorOption
   constructor(props: TextMessageConstructorOptions) {
     super(props);
     this.type = "TextMessage";
+  }
+}
+
+export class ContentMessage extends Message implements ContentMessageConstructorOptions {
+  role: ContentMessageInput["role"];
+  content: ContentMessageInput['content'];
+
+  constructor(props: ContentMessageConstructorOptions) {
+    super(props);
+    this.content = props.content ?? []; // Default to an empty array
+    this.role = props.role;
+    this.type = "ContentMessage";
   }
 }
 
