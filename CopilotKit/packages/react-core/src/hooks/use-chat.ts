@@ -439,7 +439,10 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
     let newMessages = [...messages];
     const lastMessage = messages[messages.length - 1];
 
-    if ( (lastMessage.isTextMessage() || lastMessage.isContentMessage()) && lastMessage.role === "assistant") {
+    if (
+      (lastMessage.isTextMessage() || lastMessage.isContentMessage()) &&
+      lastMessage.role === "assistant"
+    ) {
       newMessages = newMessages.slice(0, -1);
     }
 

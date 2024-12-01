@@ -11,7 +11,12 @@ import {
   MessageStatusCode,
 } from "../graphql/@generated/graphql";
 
-type MessageType = "TextMessage" | "ContentMessage" | "ActionExecutionMessage" | "ResultMessage" | "AgentStateMessage";
+type MessageType =
+  | "TextMessage"
+  | "ContentMessage"
+  | "ActionExecutionMessage"
+  | "ResultMessage"
+  | "AgentStateMessage";
 
 export class Message {
   type: MessageType;
@@ -29,7 +34,7 @@ export class Message {
   isTextMessage(): this is TextMessage {
     return this.type === "TextMessage";
   }
-  
+
   isContentMessage(): this is ContentMessage {
     return this.type === "ContentMessage";
   }
@@ -68,7 +73,7 @@ export class TextMessage extends Message implements TextMessageConstructorOption
 
 export class ContentMessage extends Message implements ContentMessageConstructorOptions {
   role: ContentMessageInput["role"];
-  content: ContentMessageInput['content'];
+  content: ContentMessageInput["content"];
 
   constructor(props: ContentMessageConstructorOptions) {
     super(props);

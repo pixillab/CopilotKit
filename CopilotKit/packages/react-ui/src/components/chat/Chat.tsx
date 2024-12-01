@@ -216,7 +216,7 @@ export function CopilotChat({
         RenderResultMessage={RenderResultMessage}
         messages={visibleMessages}
         inProgress={isLoading}
-	RenderContentMessage={RenderContentMessage} 
+        RenderContentMessage={RenderContentMessage}
       >
         {currentSuggestions.length > 0 && (
           <div>

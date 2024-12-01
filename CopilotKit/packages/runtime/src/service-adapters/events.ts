@@ -44,8 +44,7 @@ export type RuntimeEvent =
       type: RuntimeEventTypes.ContentMessageContent;
       content: string;
     }
-    | { type: RuntimeEventTypes.ContentMessageEnd }
-
+  | { type: RuntimeEventTypes.ContentMessageEnd }
   | {
       type: RuntimeEventTypes.ActionExecutionStart;
       actionExecutionId: string;

@@ -118,12 +118,11 @@ export function convertActionInputToOpenAITool(action: ActionInput): ChatComplet
 }
 
 export function convertMessageToOpenAIMessage(message: Message): ChatCompletionMessageParam {
-  if (message.isTextMessage() || message.isContentMessage() ) {
+  if (message.isTextMessage() || message.isContentMessage()) {
     return {
       role: message.role,
-      content: typeof message.content === "string"
-          ? message.content
-          : JSON.stringify(message.content),
+      content:
+        typeof message.content === "string" ? message.content : JSON.stringify(message.content),
     };
   } else if (message.isActionExecutionMessage()) {
     return {

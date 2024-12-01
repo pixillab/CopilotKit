@@ -4,7 +4,12 @@ import {
   defaultCopilotContextCategories,
 } from "@copilotkit/react-core";
 import { CopilotKitVersion } from "./types";
-import { ActionExecutionMessage, ResultMessage, TextMessage, ContentMessage } from "@copilotkit/runtime-client-gql";
+import {
+  ActionExecutionMessage,
+  ResultMessage,
+  TextMessage,
+  ContentMessage,
+} from "@copilotkit/runtime-client-gql";
 import { AgentStateMessage } from "@copilotkit/runtime-client-gql";
 
 export function shouldShowDevConsole(showDevConsole: boolean | "auto"): boolean {
@@ -158,16 +163,16 @@ export function logMessages(context: CopilotMessagesContextParams) {
       };
     } else if (message.isContentMessage()) {
       const contentSummary = message.content
-          .map((item) => {
-            if (item.textContent) {
-              return `Text: "${item.textContent.text}"`;
-            } else if (item.imageURLContent) {
-              return `Image URL: "${item.imageURLContent.image_url.url}"`;
-            } else {
-              return `Unknown Content Type`;
-            }
-          })
-          .join("; ");
+        .map((item) => {
+          if (item.textContent) {
+            return `Text: "${item.textContent.text}"`;
+          } else if (item.imageURLContent) {
+            return `Image URL: "${item.imageURLContent.image_url.url}"`;
+          } else {
+            return `Unknown Content Type`;
+          }
+        })
+        .join("; ");
       return {
         id: message.id,
         type: "ContentMessage",

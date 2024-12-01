@@ -74,13 +74,13 @@ export const Messages = ({
           );
         } else if (message.isContentMessage()) {
           return (
-              <RenderContentMessage
-                  key={index}
-                  message={message}
-                  inProgress={inProgress}
-                  index={index}
-                  isCurrentMessage={isCurrentMessage}
-              />
+            <RenderContentMessage
+              key={index}
+              message={message}
+              inProgress={inProgress}
+              index={index}
+              isCurrentMessage={isCurrentMessage}
+            />
           );
         } else if (message.isActionExecutionMessage()) {
           return (

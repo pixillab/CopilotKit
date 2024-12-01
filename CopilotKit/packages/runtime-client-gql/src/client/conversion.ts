@@ -1,11 +1,13 @@
 import {
-  GenerateCopilotResponseMutation, MessageContentInput,
+  GenerateCopilotResponseMutation,
+  MessageContentInput,
   MessageInput,
   MessageStatusCode,
 } from "../graphql/@generated/graphql";
 import {
   ActionExecutionMessage,
-  AgentStateMessage, ContentMessage,
+  AgentStateMessage,
+  ContentMessage,
   Message,
   ResultMessage,
   TextMessage,
@@ -63,8 +65,7 @@ export function convertMessagesToGqlInput(messages: Message[]): MessageInput[] {
           state: JSON.stringify(message.state),
         },
       };
-    }
-    else if (message instanceof ContentMessage) {
+    } else if (message instanceof ContentMessage) {
       return {
         id: message.id,
         createdAt: message.createdAt,

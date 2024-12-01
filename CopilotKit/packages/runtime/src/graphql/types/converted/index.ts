@@ -12,7 +12,12 @@ import { ActionExecutionScope, MessageRole } from "../enums";
 
 export type MessageContent = ImageURLContentBlockInput | TextContentBlockInput;
 
-type MessageType = "TextMessage" | "ContentMessage" | "ActionExecutionMessage" | "ResultMessage" | "AgentStateMessage";
+type MessageType =
+  | "TextMessage"
+  | "ContentMessage"
+  | "ActionExecutionMessage"
+  | "ResultMessage"
+  | "AgentStateMessage";
 
 export class Message extends BaseMessageInput {
   type: MessageType;
@@ -20,7 +25,7 @@ export class Message extends BaseMessageInput {
   isTextMessage(): this is TextMessage {
     return this.type === "TextMessage";
   }
-  
+
   isContentMessage(): this is ContentMessage {
     return this.type === "ContentMessage";
   }
