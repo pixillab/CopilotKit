@@ -1,6 +1,14 @@
-import "./chunk-DE5K76I2.mjs";
-import "./chunk-MSUB6DGR.mjs";
-import "./chunk-IAFBVORQ.mjs";
+import "./chunk-P7STFMPO.mjs";
+import {
+  TelemetryClient
+} from "./chunk-QFITLWYZ.mjs";
+import "./chunk-6QGXWNS5.mjs";
+import {
+  COPILOT_CLOUD_API_URL,
+  COPILOT_CLOUD_CHAT_URL,
+  COPILOT_CLOUD_PUBLIC_API_KEY_HEADER,
+  COPILOT_CLOUD_VERSION
+} from "./chunk-3AJ2GKWG.mjs";
 import "./chunk-CYDWEPFL.mjs";
 import {
   actionParametersToJsonSchema
@@ -8,18 +16,10 @@ import {
 import {
   randomId
 } from "./chunk-RIPX6APP.mjs";
-import {
-  COPILOT_CLOUD_API_URL,
-  COPILOT_CLOUD_CHAT_URL,
-  COPILOT_CLOUD_PUBLIC_API_KEY_HEADER,
-  COPILOT_CLOUD_VERSION
-} from "./chunk-3AJ2GKWG.mjs";
-import "./chunk-P7STFMPO.mjs";
-import {
-  TelemetryClient
-} from "./chunk-QFITLWYZ.mjs";
-import "./chunk-6QGXWNS5.mjs";
+import "./chunk-DE5K76I2.mjs";
+import "./chunk-IAFBVORQ.mjs";
 import "./chunk-NAFEBKSO.mjs";
+import "./chunk-MSUB6DGR.mjs";
 
 // package.json
 var version = "1.3.15-pixil.3";
