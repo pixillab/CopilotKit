@@ -6,6 +6,7 @@ import {
   Message,
   ResultMessage,
   TextMessage,
+  ContentMessage,
   Role,
   AgentStateMessage,
 } from "@copilotkit/runtime-client-gql";
@@ -15,6 +16,7 @@ export const Messages = ({
   inProgress,
   children,
   RenderTextMessage,
+  RenderContentMessage,
   RenderActionExecutionMessage,
   RenderAgentStateMessage,
   RenderResultMessage,
@@ -63,6 +65,16 @@ export const Messages = ({
         if (message.isTextMessage()) {
           return (
             <RenderTextMessage
+              key={index}
+              message={message}
+              inProgress={inProgress}
+              index={index}
+              isCurrentMessage={isCurrentMessage}
+            />
+          );
+        } else if (message.isContentMessage()) {
+          return (
+            <RenderContentMessage
               key={index}
               message={message}
               inProgress={inProgress}

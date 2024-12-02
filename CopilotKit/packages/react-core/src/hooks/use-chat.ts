@@ -8,6 +8,7 @@ import {
 import {
   Message,
   TextMessage,
+  ContentMessage,
   ActionExecutionMessage,
   ResultMessage,
   CopilotRuntimeClient,
@@ -66,7 +67,7 @@ export type UseChatOptions = {
   /**
    * A callback to get the latest system message.
    */
-  makeSystemMessageCallback: () => TextMessage;
+  makeSystemMessageCallback: () => TextMessage | ContentMessage;
 
   /**
    * Whether the API request is in progress
@@ -287,6 +288,9 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
           for (const message of messages) {
             newMessages.push(message);
             // execute regular action executions
+            if (message.isContentMessage()) {
+              console.log("Handling ContentMessage:", message.content[0]?.textContent?.text);
+            }
             if (
               message.isActionExecutionMessage() &&
               message.status.code !== MessageStatusCode.Pending &&
@@ -420,6 +424,9 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
       return;
     }
 
+    if (message.isContentMessage()) {
+      console.log("Appending ContentMessage:", message.content[0]?.textContent?.text);
+    }
     const newMessages = [...messages, message];
     setMessages(newMessages);
     return runChatCompletionAndHandleFunctionCall(newMessages);
@@ -432,7 +439,10 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
     let newMessages = [...messages];
     const lastMessage = messages[messages.length - 1];
 
-    if (lastMessage.isTextMessage() && lastMessage.role === "assistant") {
+    if (
+      (lastMessage.isTextMessage() || lastMessage.isContentMessage()) &&
+      lastMessage.role === "assistant"
+    ) {
       newMessages = newMessages.slice(0, -1);
     }
 
