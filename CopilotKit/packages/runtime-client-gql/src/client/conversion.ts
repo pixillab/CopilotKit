@@ -65,7 +65,7 @@ export function convertMessagesToGqlInput(messages: Message[]): MessageInput[] {
           state: JSON.stringify(message.state),
         },
       };
-    } else if (message instanceof ContentMessage) {
+    } else if (message.isContentMessage()) {
       return {
         id: message.id,
         createdAt: message.createdAt,

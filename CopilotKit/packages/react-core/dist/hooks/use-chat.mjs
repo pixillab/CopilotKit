@@ -1,6 +1,6 @@
 import {
   useChat
-} from "../chunk-Z35IOTPE.mjs";
+} from "../chunk-XCH6MOCG.mjs";
 import "../chunk-SKC7AJIV.mjs";
 export {
   useChat

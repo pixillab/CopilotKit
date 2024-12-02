@@ -390,7 +390,7 @@ function useChat(options) {
     if (isLoading) {
       return;
     }
-    if (message instanceof import_runtime_client_gql.ContentMessage) {
+    if (message.isContentMessage()) {
       console.log("Appending ContentMessage:", (_b = (_a = message.content[0]) == null ? void 0 : _a.textContent) == null ? void 0 : _b.text);
     }
     const newMessages = [...messages, message];

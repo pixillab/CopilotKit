@@ -424,7 +424,7 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
       return;
     }
 
-    if (message instanceof ContentMessage) {
+    if (message.isContentMessage()) {
       console.log("Appending ContentMessage:", message.content[0]?.textContent?.text);
     }
     const newMessages = [...messages, message];
