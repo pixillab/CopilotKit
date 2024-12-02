@@ -56,7 +56,7 @@ module.exports = __toCommonJS(src_exports);
 var import_core = require("@urql/core");
 
 // package.json
-var version = "1.3.15-pixil.2";
+var version = "1.3.15-pixil.3";
 
 // src/graphql/@generated/graphql.ts
 var ActionExecutionScope = /* @__PURE__ */ ((ActionExecutionScope2) => {

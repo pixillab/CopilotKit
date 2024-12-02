@@ -49,7 +49,7 @@ module.exports = __toCommonJS(client_exports);
 var import_core = require("@urql/core");
 
 // package.json
-var version = "1.3.15-pixil.2";
+var version = "1.3.15-pixil.3";
 
 // src/graphql/@generated/graphql.ts
 var MessageRole = /* @__PURE__ */ ((MessageRole2) => {

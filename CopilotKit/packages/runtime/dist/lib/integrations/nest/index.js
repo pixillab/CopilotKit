@@ -44,7 +44,7 @@ var require_package = __commonJS({
       publishConfig: {
         access: "public"
       },
-      version: "1.3.15-pixil.2",
+      version: "1.3.15-pixil.3",
       sideEffects: false,
       main: "./dist/index.js",
       module: "./dist/index.mjs",

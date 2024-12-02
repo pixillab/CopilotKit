@@ -1,7 +1,8 @@
 import "./chunk-7ECCT6PK.mjs";
 import {
   CopilotRuntimeClient
-} from "./chunk-6LBQWU4E.mjs";
+} from "./chunk-WCCJ4POM.mjs";
+import "./chunk-2XHINFDL.mjs";
 import {
   convertGqlOutputToMessages,
   convertMessagesToGqlInput,
@@ -17,7 +18,6 @@ import {
   Role,
   TextMessage
 } from "./chunk-5L277J5Z.mjs";
-import "./chunk-2XHINFDL.mjs";
 import "./chunk-CBHYR24I.mjs";
 import {
   ActionExecutionScope,
