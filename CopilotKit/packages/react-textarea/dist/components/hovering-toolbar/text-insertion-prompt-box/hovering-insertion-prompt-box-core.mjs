@@ -1,10 +1,10 @@
 import {
   HoveringInsertionPromptBoxCore
-} from "../../../chunk-2VMZ5ZWT.mjs";
+} from "../../../chunk-VUHKJIMC.mjs";
 import "../../../chunk-KMVGEY7Q.mjs";
-import "../../../chunk-3PQ7GSFE.mjs";
 import "../../../chunk-4PDYALMP.mjs";
 import "../../../chunk-D47EKHIF.mjs";
+import "../../../chunk-3PQ7GSFE.mjs";
 import "../../../chunk-LYB4B6MK.mjs";
 import "../../../chunk-WGWQRALG.mjs";
 import "../../../chunk-VSVQZUPW.mjs";

@@ -4,9 +4,9 @@ import "./chunk-WADHCMPK.mjs";
 import "./chunk-MMVDU6DF.mjs";
 import {
   CopilotTextarea
-} from "./chunk-OTBX4FPZ.mjs";
-import "./chunk-VPGMB7K3.mjs";
+} from "./chunk-7MM37UJC.mjs";
 import "./chunk-BG4GF6PP.mjs";
+import "./chunk-VPGMB7K3.mjs";
 import "./chunk-RUV6NBIF.mjs";
 import {
   defaultAutosuggestionsConfig
@@ -16,25 +16,26 @@ import "./chunk-MCNXIA4Q.mjs";
 import "./chunk-GUZIMGGZ.mjs";
 import {
   BaseCopilotTextarea
-} from "./chunk-PZYM7K4Y.mjs";
+} from "./chunk-GYQYMSGM.mjs";
+import "./chunk-DRV2FOHZ.mjs";
+import "./chunk-QJNFNPWH.mjs";
 import "./chunk-2C7O2EVM.mjs";
 import "./chunk-GQN2HYFJ.mjs";
+import "./chunk-5UNJXFUO.mjs";
+import "./chunk-4NHVQZ67.mjs";
 import "./chunk-23Q6A46J.mjs";
 import "./chunk-AJ5OMEXM.mjs";
-import "./chunk-DRV2FOHZ.mjs";
-import "./chunk-4NHVQZ67.mjs";
-import "./chunk-QJNFNPWH.mjs";
-import "./chunk-5UNJXFUO.mjs";
+import "./chunk-XW3ICO4S.mjs";
 import "./chunk-LQ2OWQU7.mjs";
 import "./chunk-7LSRNPNI.mjs";
-import "./chunk-4XXU5BSA.mjs";
+import "./chunk-KNNP2F2J.mjs";
 import "./chunk-L7VVZH4Q.mjs";
-import "./chunk-ABYCGF77.mjs";
-import "./chunk-2VMZ5ZWT.mjs";
+import "./chunk-FJKZSRLF.mjs";
+import "./chunk-VUHKJIMC.mjs";
 import "./chunk-KMVGEY7Q.mjs";
-import "./chunk-3PQ7GSFE.mjs";
 import "./chunk-4PDYALMP.mjs";
 import "./chunk-D47EKHIF.mjs";
+import "./chunk-3PQ7GSFE.mjs";
 import "./chunk-LYB4B6MK.mjs";
 import "./chunk-HDBI2WN5.mjs";
 import "./chunk-WGWQRALG.mjs";
@@ -47,7 +48,6 @@ import {
   defaultBaseAutosuggestionsConfig
 } from "./chunk-4CVSOOJY.mjs";
 import "./chunk-7L6GIHDM.mjs";
-import "./chunk-XW3ICO4S.mjs";
 import "./chunk-H4VKQGVU.mjs";
 import "./chunk-IU3WTXLQ.mjs";
 import "./chunk-DFTV4TST.mjs";
