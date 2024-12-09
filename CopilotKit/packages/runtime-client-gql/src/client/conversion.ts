@@ -1,11 +1,13 @@
 import {
   GenerateCopilotResponseMutation,
+  MessageContentInput,
   MessageInput,
   MessageStatusCode,
 } from "../graphql/@generated/graphql";
 import {
   ActionExecutionMessage,
   AgentStateMessage,
+  ContentMessage,
   Message,
   ResultMessage,
   TextMessage,
@@ -61,6 +63,15 @@ export function convertMessagesToGqlInput(messages: Message[]): MessageInput[] {
           active: message.active,
           running: message.running,
           state: JSON.stringify(message.state),
+        },
+      };
+    } else if (message.isContentMessage()) {
+      return {
+        id: message.id,
+        createdAt: message.createdAt,
+        contentMessage: {
+          content: message.content,
+          role: message.role as any,
         },
       };
     } else {
@@ -137,6 +148,22 @@ export function convertGqlOutputToMessages(
         running: message.running,
         state: JSON.parse(message.state),
         createdAt: new Date(),
+      });
+    } else if (message.__typename === "ContentMessageOutput") {
+      const content: MessageContentInput[] = message.content.map((item) => ({
+        type: "text", // Assume all content strings are text
+        textContent: {
+          type: "text",
+          text: item, // Map string to `textContent.text`
+        },
+      }));
+
+      return new ContentMessage({
+        id: message.id,
+        role: message.role,
+        content: content,
+        createdAt: new Date(),
+        status: message.status || { code: MessageStatusCode.Pending },
       });
     }
 

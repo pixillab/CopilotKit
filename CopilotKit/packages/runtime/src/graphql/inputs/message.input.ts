@@ -17,6 +17,30 @@ export class MessageInput extends BaseMessageInput {
 
   @Field(() => AgentStateMessageInput, { nullable: true })
   agentStateMessage?: AgentStateMessageInput;
+
+  @Field(() => ContentMessageInput, { nullable: true })
+  contentMessage?: ContentMessageInput;
+}
+
+@InputType()
+export class MessageContentInput {
+  @Field(() => String)
+  type: "text" | "image_url";
+
+  @Field(() => TextContentBlockInput, { nullable: true })
+  textContent?: TextContentBlockInput;
+
+  @Field(() => ImageURLContentBlockInput, { nullable: true })
+  imageURLContent?: ImageURLContentBlockInput;
+}
+
+@InputType()
+export class ContentMessageInput {
+  @Field(() => [MessageContentInput])
+  content: MessageContentInput[];
+
+  @Field(() => MessageRole)
+  role: MessageRole;
 }
 
 @InputType()
@@ -77,4 +101,31 @@ export class AgentStateMessageInput {
 
   @Field(() => Boolean)
   active: boolean;
+}
+
+@InputType()
+export class ImageURLContentBlockInput {
+  @Field(() => String)
+  type: "image_url";
+
+  @Field(() => ImageURLInput)
+  image_url: ImageURLInput;
+}
+
+@InputType()
+export class ImageURLInput {
+  @Field(() => String)
+  url: string;
+
+  @Field(() => String, { nullable: true, defaultValue: "auto" })
+  detail?: "auto" | "low" | "high";
+}
+
+@InputType()
+export class TextContentBlockInput {
+  @Field(() => String)
+  type: "text";
+
+  @Field(() => String)
+  text: string;
 }
