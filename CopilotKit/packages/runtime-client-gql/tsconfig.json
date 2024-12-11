@@ -2,7 +2,11 @@
   "extends": "../../utilities/tsconfig/base.json",
   "compilerOptions": {
     "strictPropertyInitialization": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist"
   },
   "include": ["."],
   "exclude": [

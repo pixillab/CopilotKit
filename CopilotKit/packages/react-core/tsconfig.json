@@ -8,5 +8,11 @@
     "**/*.test.ts", 
     "**/*.test.tsx",
     "**/__tests__/*"
-  ]
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist"
+  }
 }
