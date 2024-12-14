@@ -12,7 +12,8 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
+    "inlineSources": true,
     "sourceMap": true,
-    "outDir": "./dist"
+    "noEmit": false,
   }
 }

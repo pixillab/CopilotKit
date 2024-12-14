@@ -8,7 +8,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist"
+    "inlineSources": true
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["dist", "build", "node_modules", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/*"]
