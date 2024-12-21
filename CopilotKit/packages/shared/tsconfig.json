@@ -9,5 +9,5 @@
     "sourceMap": true,
     "inlineSources": true
   },
-  "exclude": ["dist", "build", "node_modules", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/*"]
+  "exclude": ["build", "node_modules", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/*"]
 }
