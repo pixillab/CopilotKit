@@ -10,6 +10,6 @@
     "sourceMap": true,
     "inlineSources": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["."],
   "exclude": ["build", "node_modules", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/*"]
 }
