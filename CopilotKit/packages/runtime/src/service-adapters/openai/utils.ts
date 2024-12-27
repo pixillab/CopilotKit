@@ -7,6 +7,8 @@ import {
   ChatCompletionAssistantMessageParam,
   ChatCompletionSystemMessageParam,
 } from "openai/resources";
+import OpenAI from "openai";
+import ChatCompletionContentPart = OpenAI.ChatCompletionContentPart;
 
 export function limitMessagesToTokenCount(
   messages: any[],
@@ -118,11 +120,64 @@ export function convertActionInputToOpenAITool(action: ActionInput): ChatComplet
   };
 }
 
+/**
+ * Utility function to extract text and image URLs from a string.
+ * @param content The content string to parse.
+ * @returns An array of strings (text) and objects (image URLs).
+ */
+function extractTextAndImageUrls(content: string): Array<string | { url: string }> {
+  const urlRegex = /(https?:\/\/[^\s]+)/g; // Basic regex to match URLs
+  const parts: Array<string | { url: string }> = [];
+  let lastIndex = 0;
+
+  // Find all matches
+  content.replace(urlRegex, (match, offset) => {
+    // Add text before the URL
+    if (offset > lastIndex) {
+      parts.push(content.substring(lastIndex, offset).trim());
+    }
+    // Add the URL as an image object
+    parts.push({ url: match });
+    lastIndex = offset + match.length;
+    return match;
+  });
+
+  // Add remaining text after the last URL
+  if (lastIndex < content.length) {
+    parts.push(content.substring(lastIndex).trim());
+  }
+
+  return parts.filter(part => (typeof part === "string" ? part.length > 0 : true));
+}
+
 export function convertMessageToOpenAIMessage(message: Message): ChatCompletionMessageParam {
   if (message.isTextMessage()) {
+    const contentParts: ChatCompletionContentPart[] = [];
+
+    // Split content into parts: text and image URLs
+    const textAndUrls = extractTextAndImageUrls(message.content);
+
+    // Convert each part to ChatCompletionContentPart
+    textAndUrls.forEach(part => {
+      if (typeof part === "string") {
+        contentParts.push({
+          type: "text",
+          text: part,
+        });
+      } else {
+        contentParts.push({
+          type: "image_url",
+          image_url: {
+            url: part.url,
+            detail: "auto", // Default to 'auto'; can be adjusted as needed
+          },
+        });
+      }
+    });
+
     return {
       role: message.role as ChatCompletionUserMessageParam["role"],
-      content: message.content,
+      content: contentParts,
     } satisfies
       | ChatCompletionUserMessageParam
       | ChatCompletionAssistantMessageParam
